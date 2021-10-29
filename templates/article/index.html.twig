@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Article
+{% endblock %}
+
+{% if is_granted('EDIT', post) %}
+    <div class="section">
+        <a  href="{{ path('admin_post_edit', {id: post.id}) }}">
+            <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit_post'|trans }}
+        </a>
+    </div>
+{% endif %}

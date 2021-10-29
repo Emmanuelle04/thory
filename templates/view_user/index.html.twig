@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ViewUserController!{% endblock %}
+
+{% block body %}
+    {# <div id="presidents">Loading...</div> #}
+    <div class="example-wrapper">
+        <h1>List of Users</h1>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>Username</th>
+            </tr>
+            {% for x in data %}
+                <tr>
+                    <td>{{ x.fullName }}</td>
+                    <td>{{ x.Email }}</td>
+                    <td>{{ x.Username }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {# <script src="{{ asset('bundles/datatables/js/datatables.js') }}"></script> #}
+    {# <script> #}
+    {# $(function () { #}
+    {# $('#presidents').initDataTables({{ datatable_settings(datatable) }}); #}
+    {# }); #}
+    {# </script> #}
+{% endblock %}
